@@ -15,6 +15,10 @@ $spacing
   &:after
     @extend $box-sizing
 
+.v-space-none
+  > *
+    margin-top 0 !important
+
 body
   margin 0
 
@@ -70,7 +74,3 @@ nest(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
 
 .nest
   display block
-
-  &.spacing-none
-    > *
-      margin-top 0
