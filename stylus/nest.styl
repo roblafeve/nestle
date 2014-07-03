@@ -61,12 +61,16 @@ nest(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
       size = round(size,3)
       
       *
-        margin-top (size)em
-        margin-top (size)rem
+        margin-top unit(size, em)
+        margin-top unit(size, rem)
 
       .grid.spaced
-        border-spacing (size)em 0
-        margin (size)em (-(size)em) 0
+        border-spacing unit(size, em) 0
+        margin unit(size, em) unit(-(size), em) 0
 
 .nest
   display block
+
+  &.spacing-none
+    > *
+      margin-top
