@@ -1,0 +1,30 @@
+// GRID
+.grid
+  vertical-align top
+  border-spacing 0
+
+  // Layout
+  &.auto
+    table-layout fixed
+
+  // Vertical Alignment
+  &.align-middle
+    vertical-align middle
+  &.align-bottom
+    vertical-align bottom
+
+.grid-items
+  display table
+  table-layout inherit
+  border-spacing inherit
+  vertical-align inherit  
+  width 100%
+
+  > *
+    display table-cell
+    vertical-align inherit
+
+    &.max
+      width 100%
+    &.min
+      width 0.00001px

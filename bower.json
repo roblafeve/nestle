@@ -1,0 +1,8 @@
+{
+  "name": "nestle",
+  "version": "0.1.0",
+  "main": "stylus/index.styl",
+  "ignore": [],
+  "dependencies": {},
+  "devDependencies": {}
+}
