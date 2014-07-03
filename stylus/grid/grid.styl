@@ -25,9 +25,10 @@
   width 100%
   height inherit
 
-  > *
+  > *:not(.grid-row)
     display table-cell
     vertical-align inherit
+    height 100%
 
     &.max
       width 100%
@@ -36,7 +37,15 @@
 
 .grid-row
   display table-row
-  width 100%
+
+  > *
+    display table-cell
+    vertical-align inherit
+
+    &.max
+      width 100%
+    &.min
+      width 0.00001px
 
   &.max
     height 100%
