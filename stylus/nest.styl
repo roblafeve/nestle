@@ -76,8 +76,8 @@ nest(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
 
         &.wrapped
           margin unit(-(size/2), em) !important
-          .grid-items
-            > *
+          & > .grid-items
+            & > *
               padding unit(size/2, em)
 
 .nest
