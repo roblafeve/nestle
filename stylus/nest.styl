@@ -75,10 +75,10 @@ nest(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
           margin unit(size, em) unit(-(size), em) 0
 
         &.wrapped
-          margin -(size/2)em !important
+          margin unit(-(size/2), em) !important
           .grid-items
             > *
-              padding (size/2)em
+              padding unit(size/2, em)
 
 .nest
   display block
