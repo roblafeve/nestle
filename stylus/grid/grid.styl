@@ -17,6 +17,21 @@
   &.height-full
     height 100%
 
+  // Variants
+  &.wrapped
+    border-spacing 0
+    margin 0
+
+    .grid-items
+      display block
+      width auto
+      font-size 0
+
+      > *
+        font-size 1rem
+        display inline-block
+        margin 0
+
 .grid-items
   display table
   table-layout inherit

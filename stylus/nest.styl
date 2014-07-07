@@ -68,9 +68,17 @@ nest(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
         margin-top unit(size, em)
         margin-top unit(size, rem)
 
-      .grid.spaced
-        border-spacing unit(size, em) 0
-        margin unit(size, em) unit(-(size), em) 0
+      .grid
+
+        &.spaced
+          border-spacing unit(size, em) 0
+          margin unit(size, em) unit(-(size), em) 0
+
+        &.wrapped
+          margin -(size/2)em !important
+          .grid-items
+            > *
+              padding (size/2)em
 
 .nest
   display block
