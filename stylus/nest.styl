@@ -42,9 +42,53 @@ nest(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
       class_list += class
     
     {class_list}
+      // Padding
       &.padded
-        padding (size)em
+        padding unit(size, em)
       
+      // Padding - Single Axis
+      &.padded-v
+        padding unit(size, em) 0
+      &.padded-h
+        padding 0 unit(size, em)
+
+      // Padding - Single side
+      &.padded-top
+        padding unit(size, em) 0 0
+      &.padded-right
+        padding 0 unit(size, em) 0 0
+      &.padded-bottom
+        padding 0 0 unit(size, em) 0
+      &.padded-left
+        padding 0 0 0 unit(size, em)
+
+      // Padding - Single side none
+      &.padded-top-none
+        padding 0 unit(size, em) unit(size, em)
+      &.padded-right-none
+        padding unit(size, em) 0 unit(size, em) unit(size, em)
+      &.padded-bottom-none
+        padding unit(size, em) unit(size, em) 0 unit(size, em)
+      &.padded-left-none
+        padding unit(size, em) unit(size, em) unit(size, em) 0
+
+      // Padding - Step Out
+      &.padded-step-out
+        padding unit(size*ratio, em)
+      &.padded-step-out-v
+        padding unit(size*ratio, em) unit(size, em)
+      &.padded-step-out-h
+        padding unit(size, em) unit(size*ratio, em)
+      
+      // Padding - Step In
+      &.padded-step-in
+        padding unit(size/ratio, em)
+      &.padded-step-in-v
+        padding unit(size/ratio, em) unit(size, em)
+      &.padded-step-in-h
+        padding unit(size, em) unit(size/ratio, em)
+
+
       if dev
         background-color rgba(bg, 0.2)
         outline 1px solid rgba(bg, 0.75)
