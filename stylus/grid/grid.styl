@@ -6,11 +6,12 @@
   // Layout
   &.auto
     table-layout fixed
-
   &.inline
     display inline-block
 
   // Vertical Alignment
+  &.align-top // default
+    vertical-align top
   &.align-middle
     vertical-align middle
   &.align-bottom
@@ -58,10 +59,12 @@
 // Rows
 .rows
   display table-row-group
+  vertical-align inherit
 
 // Row
 .row
   display table-row
+  vertical-align inherit
 
   &.max
     height 100%
