@@ -37,19 +37,23 @@
         margin 0
         height auto
 
+// All children of `.grid` inherit vertical alignment
+$vertical-align
+  vertical-align inherit
+
 // Grid Items
 .grid-items
   display table
   table-layout inherit
   border-spacing inherit
-  vertical-align inherit  
+  @extend $vertical-align
   width 100%
   height inherit
 
 // Column
 .col
   display table-cell
-  vertical-align inherit
+  @extend $vertical-align
 
   &.max
     width 100%
@@ -59,12 +63,12 @@
 // Rows
 .rows
   display table-row-group
-  vertical-align inherit
+  @extend $vertical-align
 
 // Row
 .row
   display table-row
-  vertical-align inherit
+  @extend $vertical-align
 
   &.max
     height 100%
