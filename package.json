@@ -1,0 +1,32 @@
+{
+  "name": "nestle",
+  "version": "0.1.0",
+  "main": "stylus/index.styl",
+  "ignore": [],
+  "dependencies": {
+    "stylus": ">=0.45.0 <0.49.0"
+  },
+  "devDependencies": {},
+  "description": "Nestle ===========",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/roblafeve/nestle.git"
+  },
+  "keywords": [
+    "stylus",
+    "css",
+    "grid",
+    "nesting",
+    "nested",
+    "hierarchy"
+  ],
+  "author": "Rob LaFeve",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roblafeve/nestle/issues"
+  },
+  "homepage": "https://github.com/roblafeve/nestle"
+}
