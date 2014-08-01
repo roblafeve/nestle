@@ -41,7 +41,8 @@ nest(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
     unless step is 1
       class_list += class
     
-    {class_list}
+    {class_list},
+    .nest-{step}
       // Padding
       &.padded
         padding unit(size, em)
