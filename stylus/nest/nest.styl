@@ -1,0 +1,62 @@
+// Nest Generator
+devColor = teal
+devUnits = false
+
+nest(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
+
+  if dev
+    [class*='pad']
+      background-color rgba(bg, 0.2)
+      if devUnits
+        &:before
+          if size == 1
+            color red
+          else
+            color black
+          content "" + size
+          display inline-block
+          line-height 0.65
+          margin-bottom size
+
+  for step in (1...steps + 1)
+    rank = steps - (step - shift)
+    size = (ratio**rank)
+    size = round(size,3)
+
+    .pad-{step}
+      padding        unit(size, em)
+    .pad-t-{step}
+      padding-top    unit(size, em)
+    .pad-r-{step}
+      padding-right  unit(size, em)
+    .pad-b-{step}
+      padding-bottom unit(size, em)
+    .pad-l-{step}
+      padding-left   unit(size, em)
+
+    .nest-{step}
+
+      // Adjust spacing size for children
+      rank = steps - ((step + 1) - shift)
+      size = (ratio**rank)
+      size = round(size,3)
+
+      *
+        margin-top unit(size, em)
+        margin-top unit(size, rem)
+
+      .grid
+
+        &.spaced
+          border-spacing unit(size, em) 0
+          margin unit(size, em) unit(-(size), em) 0
+
+          &.wrapped
+            margin unit((size/2), em) unit(-(size/2), em) unit(-(size/2), em) !important
+            &:first-child
+              margin-top unit(-(size/2), em) !important
+            & > .grid-items
+              & > *
+                padding unit(size/2, em)
+                margin 0 !important
+    
