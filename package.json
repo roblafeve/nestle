@@ -1,32 +1,31 @@
 {
   "name": "nest",
   "version": "0.2.0",
-  "main": "index.styl",
-  "ignore": [],
-  "dependencies": {
-    "stylus": ">=0.45.0 <0.49.0"
-  },
-  "devDependencies": {},
-  "description": "Nestle ===========",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/roblafeve/nest.git"
-  },
+  "description": "Stylus mixins and utilities",
   "keywords": [
     "stylus",
     "css",
     "grid",
     "nesting",
     "nested",
-    "hierarchy"
+    "hierarchy",
+    "white space"
   ],
-  "author": "Rob LaFeve",
-  "license": "MIT",
+  "homepage": "https://github.com/roblafeve/nest",
   "bugs": {
     "url": "https://github.com/roblafeve/nest/issues"
   },
-  "homepage": "https://github.com/roblafeve/nest"
+  "license": "MIT",
+  "author": "Rob LaFeve",
+  "main": "index.styl",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/roblafeve/nest.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "stylus": "0.45.x"
+  }
 }
