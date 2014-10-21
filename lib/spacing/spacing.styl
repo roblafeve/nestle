@@ -1,0 +1,23 @@
+// Spacing Reset
+
+$box-sizing
+  box-sizing border-box
+  
+$spacing
+  margin-bottom 0
+  &:first-child
+    margin-top 0 !important
+
+* 
+  @extend $box-sizing
+  @extend $spacing
+  &:before
+  &:after
+    @extend $box-sizing
+
+.v-space-none
+  > *
+    margin-top 0 !important
+
+body
+  margin 0
