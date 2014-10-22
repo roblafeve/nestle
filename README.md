@@ -1,7 +1,7 @@
 Nestle
 ===========
 
-This document is a work in progress...
+Nestle is a white space generator built for Stylus. It makes it easy to maintain consistent vertical rythm and inner spacing. Since the web isn't purely vertical, Nestle includes a robust grid module that ties in seemlessly.
 
 ## Module Usage
 
