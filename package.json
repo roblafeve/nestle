@@ -1,7 +1,7 @@
 {
-  "name": "nest",
+  "name": "nestle",
   "version": "0.2.0",
-  "description": "Stylus mixins and utilities",
+  "description": "A layout system built for Stylus",
   "keywords": [
     "stylus",
     "css",
@@ -11,16 +11,16 @@
     "hierarchy",
     "white space"
   ],
-  "homepage": "https://github.com/roblafeve/nest",
+  "homepage": "https://github.com/roblafeve/nestle",
   "bugs": {
-    "url": "https://github.com/roblafeve/nest/issues"
+    "url": "https://github.com/roblafeve/nestle/issues"
   },
   "license": "MIT",
   "author": "Rob LaFeve",
   "main": "index.styl",
   "repository": {
     "type": "git",
-    "url": "git://github.com/roblafeve/nest.git"
+    "url": "git://github.com/roblafeve/nestle.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
