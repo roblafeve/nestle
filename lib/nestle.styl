@@ -36,11 +36,6 @@ nestle(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
 
     .nest-{step}
 
-      // Adjust spacing size for children
-      rank = steps - ((step + 1) - shift)
-      size = (ratio**rank)
-      size = round(size,3)
-
       *
         margin-top unit(size, em)
         margin-top unit(size, rem)
