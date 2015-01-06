@@ -1,0 +1,70 @@
+// Nest Generator
+$devColor: teal
+$devUnits: false
+
+@function pow($number, $exp)
+  $value: 1
+  @if $exp > 0
+    @for $i from 1 through $exp
+      $value: $value * $number
+  @else if $exp < 0
+    @for $i from 1 through -$exp
+      $value: $value / $number
+  @return $value
+
+=nestle($ratio: 1.5, $shift: -2, $steps: 6, $dev: false, $bg: $devColor)
+
+  @if $dev
+    [class*='pad']
+      background-color: rgba($bg, 0.2)
+      @if $devUnits
+        &:before
+          @if size == 1
+            color: red
+          @else
+            color: black
+          content: "" + size
+          display: inline-block
+          line-height: 0.65
+          margin-bottom: size
+
+  @for $step from 1 through ($steps)
+    $rank: $steps - ($step - $shift)
+    $size: pow($ratio, $rank)
+
+    .pad-#{$step}
+      padding:       $size + em
+    .pad-t-#{$step}
+      padding-top:    $size + em
+    .pad-r-#{$step}
+      padding-right:  $size + em
+    .pad-b-#{$step}
+      padding-bottom: $size + em
+    .pad-l-#{$step}
+      padding-left:   $size + em
+
+    .nest-#{$step}
+
+      // Adjust spacing size for children
+      $rank: $steps - (($step + 1) - $shift)
+      $size: pow($ratio, $rank)
+
+      *
+        margin-top: $size + em
+        margin-top: $size + rem
+
+      .grid
+
+        &.spaced
+          border-spacing: $size + em 0
+          margin: $size + em -$size + em 0
+
+          &.wrapped
+            margin: $size/2 + em -$size/2 + em -$size/2 + em !important
+            &:first-child
+              margin-top: -$size/2 + em !important
+            & > .grid-items
+              & > *
+                padding: $size/2 + em
+                margin: 0 !important
+    
