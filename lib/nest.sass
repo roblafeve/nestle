@@ -45,11 +45,13 @@ $devUnits: false
 
     .nest-#{$step}
 
-      *
+      > *, 
+      &.sub-all *
         margin-top: $size + em
         margin-top: $size + rem
 
-      .grid
+      > .grid, 
+      &.sub-all .grid
 
         &.spaced
           border-spacing: $size + em 0
@@ -63,4 +65,3 @@ $devUnits: false
               & > *
                 padding: ($size/2 + em)
                 margin: 0 !important
-    
