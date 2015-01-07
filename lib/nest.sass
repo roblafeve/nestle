@@ -45,10 +45,6 @@ $devUnits: false
 
     .nest-#{$step}
 
-      // Adjust spacing size for children
-      $rank: $steps - (($step + 1) - $shift)
-      $size: pow($ratio, $rank)
-
       *
         margin-top: $size + em
         margin-top: $size + rem
@@ -57,14 +53,14 @@ $devUnits: false
 
         &.spaced
           border-spacing: $size + em 0
-          margin: $size + em -$size + em 0
+          margin: ($size + em) (-$size + em) 0
 
           &.wrapped
-            margin: $size/2 + em -$size/2 + em -$size/2 + em !important
+            margin: ($size/2 + em) (-$size/2 + em) (-$size/2 + em) !important
             &:first-child
-              margin-top: -$size/2 + em !important
+              margin-top: (-$size/2 + em) !important
             & > .grid-items
               & > *
-                padding: $size/2 + em
+                padding: ($size/2 + em)
                 margin: 0 !important
     
