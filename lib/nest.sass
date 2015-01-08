@@ -52,6 +52,9 @@ $devUnits: false
 
       > .grid, 
       &.sub-all .grid
+        
+        &.wrapped
+          margin: ($size + em) 0 0
 
         &.spaced
           border-spacing: $size + em 0
@@ -63,5 +66,5 @@ $devUnits: false
               margin-top: (-$size/2 + em) !important
             & > .grid-items
               & > *
-                padding: ($size/2 + em)
+                padding: ($size/2) + em
                 margin: 0 !important
