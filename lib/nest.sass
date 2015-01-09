@@ -33,7 +33,13 @@ $devUnits: false
     $size: pow($ratio, $rank)
 
     .pad-#{$step}
-      padding:       $size + em
+      padding:        $size + em
+    .pad-h-#{$step}
+      padding-right:  $size + em
+      padding-left:   $size + em
+    .pad-v-#{$step}
+      padding-top:    $size + em
+      padding-bottom: $size + em
     .pad-t-#{$step}
       padding-top:    $size + em
     .pad-r-#{$step}
