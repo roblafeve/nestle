@@ -25,38 +25,59 @@ nestle(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
 
     .pad-{step}
       padding        unit(size, em)
+      padding        unit(size, rem)
+    .pad-h-{step}
+      padding-right  unit(size, em)
+      padding-right  unit(size, rem)
+      padding-left   unit(size, em)
+      padding-left   unit(size, rem)
+    .pad-v-{step}
+      padding-top    unit(size, em)
+      padding-top    unit(size, rem)
+      padding-bottom unit(size, em)
+      padding-bottom unit(size, rem)
     .pad-t-{step}
       padding-top    unit(size, em)
+      padding-top    unit(size, rem)
     .pad-r-{step}
       padding-right  unit(size, em)
+      padding-right  unit(size, rem)
     .pad-b-{step}
       padding-bottom unit(size, em)
+      padding-bottom unit(size, rem)
     .pad-l-{step}
       padding-left   unit(size, em)
+      padding-left   unit(size, rem)
 
     .nest-{step}
 
-      // Adjust spacing size for children
-      rank = steps - ((step + 1) - shift)
-      size = (ratio**rank)
-      size = round(size,3)
-
-      *
+      > *
+      &.sub-all *
         margin-top unit(size, em)
         margin-top unit(size, rem)
 
-      .grid
+      > .grid
+      &.sub-all .grid
+        
+        &.wrapped
+          margin unit(size, em)
+          margin unit(size, rem)
 
         &.spaced
           border-spacing unit(size, em) 0
+          border-spacing unit(size, rem) 0
           margin unit(size, em) unit(-(size), em) 0
+          margin unit(size, rem) unit(-(size), rem) 0
 
           &.wrapped
             margin unit((size/2), em) unit(-(size/2), em) unit(-(size/2), em) !important
+            margin unit((size/2), rem) unit(-(size/2), rem) unit(-(size/2), rem) !important
             &:first-child
               margin-top unit(-(size/2), em) !important
+              margin-top unit(-(size/2), rem) !important
             & > .grid-items
               & > *
                 padding unit(size/2, em)
+                padding unit(size/2, rem)
                 margin 0 !important
     
