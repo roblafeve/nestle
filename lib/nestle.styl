@@ -1,83 +1,51 @@
-// Nest Generator
-devColor = teal
-devUnits = false
-
-nestle(ratio = 1.5, shift = -2.5, steps = 6, dev = false, bg = devColor)
-
-  if dev
-    [class*='pad']
-      background-color rgba(bg, 0.2)
-      if devUnits
-        &:before
-          if size == 1
-            color red
-          else
-            color black
-          content "" + size
-          display inline-block
-          line-height 0.65
-          margin-bottom size
+nestle(ratio = 1.5, shift = -2.5, steps = 6)
 
   for step in (1...steps + 1)
     rank = steps - (step - shift)
     size = (ratio**rank)
-    size = round(size,3)
+    size = round(size,3)rem
 
+    .unit-{step}
+      font-size size
+      
     .pad-{step}
-      padding        unit(size, em)
-      padding        unit(size, rem)
+      padding        size
     .pad-h-{step}
-      padding-right  unit(size, em)
-      padding-right  unit(size, rem)
-      padding-left   unit(size, em)
-      padding-left   unit(size, rem)
+      padding-right  size
+      padding-left   size
     .pad-v-{step}
-      padding-top    unit(size, em)
-      padding-top    unit(size, rem)
-      padding-bottom unit(size, em)
-      padding-bottom unit(size, rem)
+      padding-top    size
+      padding-bottom size
     .pad-t-{step}
-      padding-top    unit(size, em)
-      padding-top    unit(size, rem)
+      padding-top    size
     .pad-r-{step}
-      padding-right  unit(size, em)
-      padding-right  unit(size, rem)
+      padding-right  size
     .pad-b-{step}
-      padding-bottom unit(size, em)
-      padding-bottom unit(size, rem)
+      padding-bottom size
     .pad-l-{step}
-      padding-left   unit(size, em)
-      padding-left   unit(size, rem)
+      padding-left   size
 
     .nest-{step}
 
       > *
       &.sub-all *
-        margin-top unit(size, em)
-        margin-top unit(size, rem)
+        margin-top size
 
       > .grid
       &.sub-all .grid
         
         &.wrapped
-          margin unit(size, em)
-          margin unit(size, rem)
+          margin size
 
         &.spaced
-          border-spacing unit(size, em) 0
-          border-spacing unit(size, rem) 0
-          margin unit(size, em) unit(-(size), em) 0
-          margin unit(size, rem) unit(-(size), rem) 0
+          border-spacing size 0
+          margin size -(size) 0
 
           &.wrapped
-            margin unit((size/2), em) unit(-(size/2), em) unit(-(size/2), em) !important
-            margin unit((size/2), rem) unit(-(size/2), rem) unit(-(size/2), rem) !important
+            margin (size/2) -(size/2) -(size/2) !important
             &:first-child
-              margin-top unit(-(size/2), em) !important
-              margin-top unit(-(size/2), rem) !important
+              margin-top -(size/2) !important
             & > .grid-items
               & > *
-                padding unit(size/2, em)
-                padding unit(size/2, rem)
+                padding (size/2)
                 margin 0 !important
-    
