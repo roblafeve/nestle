@@ -39,12 +39,12 @@ nestle(ratio = 1.5, shift = -2.5, steps = 6)
 
         &.spaced
           border-spacing size 0
-          margin size -(size) 0
+          margin size (-(size)) 0
 
           &.wrapped
-            margin (size/2) -(size/2) -(size/2) !important
+            margin (size/2) (-(size/2)) (-(size/2)) !important
             &:first-child
-              margin-top -(size/2) !important
+              margin-top (-(size/2)) !important
             & > .grid-items
               & > *
                 padding (size/2)
