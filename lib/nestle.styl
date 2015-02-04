@@ -1,4 +1,4 @@
-nestle(ratio = 1.5, shift = -2.5, steps = 6)
+nestle(ratio = 1.5, shift = -2.5, steps = 6, include_wrapped=false)
 
   for step in (1...steps + 1)
     rank = steps - (step - shift)
@@ -34,18 +34,24 @@ nestle(ratio = 1.5, shift = -2.5, steps = 6)
       > .grid
       &.sub-all .grid
         
-        &.wrapped
-          margin size
+        if include_wrapped
+        
+          &.wrapped
+            margin-right 0
+            margin-left 0
 
         &.spaced
           border-spacing size 0
           margin size (-(size)) 0
+          
 
-          &.wrapped
-            margin (size/2) (-(size/2)) (-(size/2)) !important
-            &:first-child
-              margin-top (-(size/2)) !important
-            & > .grid-items
-              & > *
-                padding (size/2)
-                margin 0 !important
+          if include_wrapped
+
+            &.wrapped
+              margin (size/2) (-(size/2)) (-(size/2)) !important
+              &:first-child
+                margin-top (-(size/2)) !important
+              & > .grid-items
+                & > *
+                  padding (size/2)
+                  margin 0 !important
