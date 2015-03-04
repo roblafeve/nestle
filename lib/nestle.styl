@@ -43,15 +43,19 @@ nestle(ratio = 1.5, shift = -2.5, steps = 6, include_wrapped=false)
         &.spaced
           border-spacing size 0
           margin size (-(size)) 0
+
+        &.spaced-hv
+          border-spacing size
+          margin -(size) !important
           
 
-          if include_wrapped
+        if include_wrapped
 
-            &.wrapped
-              margin (size/2) (-(size/2)) (-(size/2)) !important
-              &:first-child
-                margin-top (-(size/2)) !important
-              & > .grid-items
-                & > *
-                  padding (size/2)
-                  margin 0 !important
+          &.wrapped
+            margin (size/2) (-(size/2)) (-(size/2)) !important
+            &:first-child
+              margin-top (-(size/2)) !important
+            & > .grid-items
+              & > *
+                padding (size/2)
+                margin 0 !important
