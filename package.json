@@ -1,6 +1,6 @@
 {
   "name": "nestle",
-  "version": "1.4.3",
+  "version": "2.0.0",
   "description": "A layout system built for Stylus",
   "keywords": [
     "stylus",
@@ -28,6 +28,7 @@
     "gulp-concat": "^2.5.2",
     "gulp-jade": "^1.0.0",
     "gulp-server-livereload": "^1.2.4",
-    "gulp-stylus": "^2.0.1"
+    "gulp-stylus": "^2.0.1",
+    "nestle": "^2.0.1"
   }
 }
