@@ -141,6 +141,11 @@ body {
 .nest-1.-deep .grid.-wrapped {
   margin: 1.378rem -1.378rem -1.378rem !important;
 }
+.nest-1 > .grid.-wrapped:first-child,
+.nest-1 > table.-wrapped:first-child,
+.nest-1.-deep .grid.-wrapped:first-child {
+  margin-top: -1.378rem !important;
+}
 .nest-1 > .grid.-wrapped > *,
 .nest-1 > table.-wrapped > *,
 .nest-1.-deep .grid.-wrapped > * {
@@ -201,6 +206,11 @@ body {
 .nest-2 > table.-wrapped,
 .nest-2.-deep .grid.-wrapped {
   margin: 0.9185rem -0.9185rem -0.9185rem !important;
+}
+.nest-2 > .grid.-wrapped:first-child,
+.nest-2 > table.-wrapped:first-child,
+.nest-2.-deep .grid.-wrapped:first-child {
+  margin-top: -0.9185rem !important;
 }
 .nest-2 > .grid.-wrapped > *,
 .nest-2 > table.-wrapped > *,
@@ -263,6 +273,11 @@ body {
 .nest-3.-deep .grid.-wrapped {
   margin: 0.6125rem -0.6125rem -0.6125rem !important;
 }
+.nest-3 > .grid.-wrapped:first-child,
+.nest-3 > table.-wrapped:first-child,
+.nest-3.-deep .grid.-wrapped:first-child {
+  margin-top: -0.6125rem !important;
+}
 .nest-3 > .grid.-wrapped > *,
 .nest-3 > table.-wrapped > *,
 .nest-3.-deep .grid.-wrapped > * {
@@ -323,6 +338,11 @@ body {
 .nest-4 > table.-wrapped,
 .nest-4.-deep .grid.-wrapped {
   margin: 0.408rem -0.408rem -0.408rem !important;
+}
+.nest-4 > .grid.-wrapped:first-child,
+.nest-4 > table.-wrapped:first-child,
+.nest-4.-deep .grid.-wrapped:first-child {
+  margin-top: -0.408rem !important;
 }
 .nest-4 > .grid.-wrapped > *,
 .nest-4 > table.-wrapped > *,
@@ -385,6 +405,11 @@ body {
 .nest-5.-deep .grid.-wrapped {
   margin: 0.272rem -0.272rem -0.272rem !important;
 }
+.nest-5 > .grid.-wrapped:first-child,
+.nest-5 > table.-wrapped:first-child,
+.nest-5.-deep .grid.-wrapped:first-child {
+  margin-top: -0.272rem !important;
+}
 .nest-5 > .grid.-wrapped > *,
 .nest-5 > table.-wrapped > *,
 .nest-5.-deep .grid.-wrapped > * {
@@ -445,6 +470,11 @@ body {
 .nest-6 > table.-wrapped,
 .nest-6.-deep .grid.-wrapped {
   margin: 0.1815rem -0.1815rem -0.1815rem !important;
+}
+.nest-6 > .grid.-wrapped:first-child,
+.nest-6 > table.-wrapped:first-child,
+.nest-6.-deep .grid.-wrapped:first-child {
+  margin-top: -0.1815rem !important;
 }
 .nest-6 > .grid.-wrapped > *,
 .nest-6 > table.-wrapped > *,
