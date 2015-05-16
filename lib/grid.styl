@@ -1,72 +1,34 @@
-// Global Grid Modifiers
-
-// Col/Row Dimensions
-minimum_dimension = 0.1px
-maximum_dimension = 100%
-
-.h-min
-  width minimum_dimension
-.h-max
-  width maximum_dimension
-.v-min
-  height minimum_dimension
-.v-max
-  height maximum_dimension
-  
-// Vertical Alignment
-.align-top // default
-  vertical-align top
-.align-middle
-  vertical-align middle
-.align-bottom
-  vertical-align bottom
-  
-// Horizontal Alignment
-.align-left // default
-  text-align left
-.align-center
-  text-align center
-.align-right
-  text-align right
-
-
-// Grid
-.grid
-  border-spacing 0
-
-  // Layout
-  &.fixed
-    table-layout fixed
-  &.inline
-    display inline-block
-
-  // Variants
-  &.wrapped
-    border-spacing 0
-
-    & > .grid-items
-      display block
-      width auto
-      font-size 0
-
-      & > *
-        font-size 1rem
-        display inline-block
-        margin 0
-        height auto
-
 // All children of `.grid` inherit vertical alignment
 $vertical-align
   vertical-align inherit
 
-// Grid Items
-.grid-items
+// Grid
+.grid
+  border-spacing 0
   display table
-  table-layout inherit
-  border-spacing inherit
-  @extend $vertical-align
+  vertical-align top
   width 100%
-  height 100%
+  &:before
+    content '' // This fixes a but that causes the first cell to lose width when a transition happens
+
+  // Layout
+  &.-fixed
+    table-layout fixed
+  &.-inline
+    display inline-table
+
+  // Variants
+  &.-wrapped
+    border-spacing 0
+    display block
+    width auto !important
+    font-size 0
+
+    & > .col
+      font-size 1rem
+      display inline-block
+      margin 0
+      height auto
 
 // Column
 .col
@@ -82,3 +44,35 @@ $vertical-align
 .row
   display table-row
   @extend $vertical-align
+
+
+// Global Grid Modifiers
+
+// Col/Row Dimensions
+minimum_dimension = 0.1px
+maximum_dimension = 100%
+
+.-h-min
+  width minimum_dimension
+.-h-max
+  width maximum_dimension
+.-v-min
+  height minimum_dimension
+.-v-max
+  height maximum_dimension
+  
+// Vertical Alignment
+.-align-top // default
+  vertical-align top
+.-align-middle
+  vertical-align middle
+.-align-bottom
+  vertical-align bottom
+  
+// Horizontal Alignment
+.-align-left // default
+  text-align left
+.-align-center
+  text-align center
+.-align-right
+  text-align right
