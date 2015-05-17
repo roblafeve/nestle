@@ -26,6 +26,8 @@ body {
 }
 .grid:before {
   content: '';
+  display: table-cell;
+  width: 0.1px;
 }
 .grid.-fixed {
   table-layout: fixed;
@@ -179,42 +181,62 @@ body {
   padding-left: 1.837rem;
 }
 .nest-2 > *,
-.nest-2.sub-all * {
+.grid:not(.-wrapped) > .col > *,
+.nest-2.sub-all *,
+.grid:not(.-wrapped) > .col.sub-all * {
   margin-top: 1.837rem;
 }
 .nest-2 > .grid.-wrapped,
+.grid:not(.-wrapped) > .col > .grid.-wrapped,
 .nest-2 > table.-wrapped,
-.nest-2.-deep .grid.-wrapped {
+.grid:not(.-wrapped) > .col > table.-wrapped,
+.nest-2.-deep .grid.-wrapped,
+.grid:not(.-wrapped) > .col.-deep .grid.-wrapped {
   margin-right: 0;
   margin-left: 0;
 }
 .nest-2 > .grid.-spaced,
+.grid:not(.-wrapped) > .col > .grid.-spaced,
 .nest-2 > table.-spaced,
-.nest-2.-deep .grid.-spaced {
+.grid:not(.-wrapped) > .col > table.-spaced,
+.nest-2.-deep .grid.-spaced,
+.grid:not(.-wrapped) > .col.-deep .grid.-spaced {
   width: calc(5.511rem + 100%);
   border-spacing: 1.837rem 0;
   margin: 1.837rem -1.837rem 0 -3.674rem;
 }
 .nest-2 > .grid.-hv,
+.grid:not(.-wrapped) > .col > .grid.-hv,
 .nest-2 > table.-hv,
-.nest-2.-deep .grid.-hv {
+.grid:not(.-wrapped) > .col > table.-hv,
+.nest-2.-deep .grid.-hv,
+.grid:not(.-wrapped) > .col.-deep .grid.-hv {
   height: calc(3.674rem + 100%);
   border-spacing: 1.837rem;
   margin: -1.837rem !important;
 }
 .nest-2 > .grid.-wrapped,
+.grid:not(.-wrapped) > .col > .grid.-wrapped,
 .nest-2 > table.-wrapped,
-.nest-2.-deep .grid.-wrapped {
+.grid:not(.-wrapped) > .col > table.-wrapped,
+.nest-2.-deep .grid.-wrapped,
+.grid:not(.-wrapped) > .col.-deep .grid.-wrapped {
   margin: 0.9185rem -0.9185rem -0.9185rem !important;
 }
 .nest-2 > .grid.-wrapped:first-child,
+.grid:not(.-wrapped) > .col > .grid.-wrapped:first-child,
 .nest-2 > table.-wrapped:first-child,
-.nest-2.-deep .grid.-wrapped:first-child {
+.grid:not(.-wrapped) > .col > table.-wrapped:first-child,
+.nest-2.-deep .grid.-wrapped:first-child,
+.grid:not(.-wrapped) > .col.-deep .grid.-wrapped:first-child {
   margin-top: -0.9185rem !important;
 }
 .nest-2 > .grid.-wrapped > *,
+.grid:not(.-wrapped) > .col > .grid.-wrapped > *,
 .nest-2 > table.-wrapped > *,
-.nest-2.-deep .grid.-wrapped > * {
+.grid:not(.-wrapped) > .col > table.-wrapped > *,
+.nest-2.-deep .grid.-wrapped > *,
+.grid:not(.-wrapped) > .col.-deep .grid.-wrapped > * {
   padding: 0.9185rem;
   margin: 0 !important;
 }
@@ -487,7 +509,7 @@ body {
   height: 100%;
 }
 .grid:not(.-wrapped) > .col {
-  background: #f5f5f5;
+  background: rgba(0,0,0,0.15);
 }
 .-wrapped > .col {
   width: 20%;
@@ -508,5 +530,5 @@ body {
   }
 }
 .wrapped-col {
-  background: #f5f5f5;
+  background: rgba(0,0,0,0.15);
 }

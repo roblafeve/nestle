@@ -10,6 +10,8 @@ $vertical-align
   width 100%
   &:before
     content '' // This fixes a but that causes the first cell to lose width when a transition happens
+    display table-cell
+    width 0.1px
 
   // Layout
   &.-fixed
