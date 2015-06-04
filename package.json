@@ -1,6 +1,6 @@
 {
   "name": "nestle",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A layout system built for Stylus",
   "keywords": [
     "stylus",
@@ -24,8 +24,5 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "stylus": "0.45.x"
   }
 }
