@@ -32,17 +32,10 @@ nestle(ratio = 1.5, shift = -2.5, steps = 6, include_wrapped=false)
         margin-top size
 
       > .grid
-      > table
-      &.-deep .grid
-        
-        if include_wrapped
-        
-          &.-wrapped
-            margin-right 0
-            margin-left 0
 
         &.-spaced
-          width "calc(%s + 100%)" % (size*3)
+          &:not(.-inline)
+            width "calc(%s + 100%)" % (size*3)
           border-spacing size 0
           margin size (-(size)) 0 (-(size*2))
 
