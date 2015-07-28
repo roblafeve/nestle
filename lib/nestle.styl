@@ -7,7 +7,7 @@ nestle(ratio = 1.5, shift = -2.5, steps = 6, include_wrapped=false)
 
     .unit-{step}
       font-size size
-      
+
     .pad-{step}
       padding        size
     .pad-h-{step}
@@ -35,15 +35,15 @@ nestle(ratio = 1.5, shift = -2.5, steps = 6, include_wrapped=false)
 
         &.-spaced
           &:not(.-inline)
-            width "calc(%s + 100%)" % (size*3)
+            width "calc((%s + 100%) + 1px)" % (size*3)
           border-spacing size 0
-          margin size (-(size)) 0 (-(size*2))
+          margin size (-(size)) 0 "calc(%s - 1px)" % (-(size*2))
 
-        &.-hv
-          height "calc(%s + 100%)" % (size*2)
-          border-spacing size
-          margin -(size) !important
-          
+          &.-hv
+            height "calc(%s + 100%)" % (size*2)
+            border-spacing size
+            margin (-(size*2)) (-(size)) (-(size)) "calc(%s - 1px)" % (-(size*2)) !important
+
 
         if include_wrapped
 

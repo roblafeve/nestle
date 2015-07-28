@@ -4,12 +4,13 @@ nestle(include_wrapped: true)
 html
 body
   height 100%
-  
+
 .grid:not(.-wrapped)
   & > .col
+  & > .row > .col
     @extend .pad-1, .nest-2
     background rgba(black, 0.15)
-  
+
 
 .-wrapped
   & > .col
@@ -20,10 +21,7 @@ body
       width (100/3)%
     @media (max-width: 640px)
       width (100/1)%
-    
+
 .wrapped-col
   @extend .pad-1
   background rgba(black, 0.15)
-    
-
-  

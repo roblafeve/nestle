@@ -7,11 +7,12 @@ $vertical-align
   border-spacing 0
   display table
   vertical-align top
-  width 100%
+  width calc(100% + 1px)
+  margin-left -1px
   &:before
     content '' // This fixes a but that causes the first cell to lose width when a transition happens
     display table-cell
-    width 0.1px
+    width 1px
 
   // Layout
   &.-fixed
@@ -47,6 +48,10 @@ $vertical-align
 .row
   display table-row
   @extend $vertical-align
+  &:before
+    content '' // This fixes a but that causes the first cell to lose width when a transition happens
+    display table-cell
+    width 1px
 
 
 // Global Grid Modifiers
@@ -63,7 +68,7 @@ maximum_dimension = 100%
   height minimum_dimension
 .-v-max
   height maximum_dimension
-  
+
 // Vertical Alignment
 .-align-top // default
   vertical-align top
@@ -71,7 +76,7 @@ maximum_dimension = 100%
   vertical-align middle
 .-align-bottom
   vertical-align bottom
-  
+
 // Horizontal Alignment
 .-align-left // default
   text-align left

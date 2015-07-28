@@ -22,18 +22,20 @@ body {
   border-spacing: 0;
   display: table;
   vertical-align: top;
-  width: 100%;
+  width: calc(100% + 1px);
+  margin-left: -1px;
 }
 .grid:before {
   content: '';
   display: table-cell;
-  width: 0.1px;
+  width: 1px;
 }
 .grid.-fixed {
   table-layout: fixed;
 }
 .grid.-inline {
   display: inline-table;
+  width: auto;
 }
 .grid.-wrapped {
   border-spacing: 0;
@@ -55,6 +57,11 @@ body {
 }
 .row {
   display: table-row;
+}
+.row:before {
+  content: '';
+  display: table-cell;
+  width: 1px;
 }
 .-h-min {
   width: 0.1px;
@@ -91,6 +98,7 @@ body {
 }
 .pad-1,
 .grid:not(.-wrapped) > .col,
+.grid:not(.-wrapped) > .row > .col,
 .wrapped-col {
   padding: 2.756rem;
 }
@@ -118,39 +126,25 @@ body {
 .nest-1.sub-all * {
   margin-top: 2.756rem;
 }
-.nest-1 > .grid.-wrapped,
-.nest-1 > table.-wrapped,
-.nest-1.-deep .grid.-wrapped {
-  margin-right: 0;
-  margin-left: 0;
-}
-.nest-1 > .grid.-spaced,
-.nest-1 > table.-spaced,
-.nest-1.-deep .grid.-spaced {
-  width: calc(8.267999999999999rem + 100%);
+.nest-1 > .grid.-spaced {
   border-spacing: 2.756rem 0;
-  margin: 2.756rem -2.756rem 0 -5.512rem;
+  margin: 2.756rem -2.756rem 0 calc(-5.512rem - 1px);
 }
-.nest-1 > .grid.-hv,
-.nest-1 > table.-hv,
-.nest-1.-deep .grid.-hv {
+.nest-1 > .grid.-spaced:not(.-inline) {
+  width: calc((8.267999999999999rem + 100%) + 1px);
+}
+.nest-1 > .grid.-spaced.-hv {
   height: calc(5.512rem + 100%);
   border-spacing: 2.756rem;
-  margin: -2.756rem !important;
+  margin: -5.512rem -2.756rem -2.756rem calc(-5.512rem - 1px) !important;
 }
-.nest-1 > .grid.-wrapped,
-.nest-1 > table.-wrapped,
-.nest-1.-deep .grid.-wrapped {
+.nest-1 > .grid.-wrapped {
   margin: 1.378rem -1.378rem -1.378rem !important;
 }
-.nest-1 > .grid.-wrapped:first-child,
-.nest-1 > table.-wrapped:first-child,
-.nest-1.-deep .grid.-wrapped:first-child {
+.nest-1 > .grid.-wrapped:first-child {
   margin-top: -1.378rem !important;
 }
-.nest-1 > .grid.-wrapped > *,
-.nest-1 > table.-wrapped > *,
-.nest-1.-deep .grid.-wrapped > * {
+.nest-1 > .grid.-wrapped > * {
   padding: 1.378rem;
   margin: 0 !important;
 }
@@ -182,61 +176,43 @@ body {
 }
 .nest-2 > *,
 .grid:not(.-wrapped) > .col > *,
+.grid:not(.-wrapped) > .row > .col > *,
 .nest-2.sub-all *,
-.grid:not(.-wrapped) > .col.sub-all * {
+.grid:not(.-wrapped) > .col.sub-all *,
+.grid:not(.-wrapped) > .row > .col.sub-all * {
   margin-top: 1.837rem;
-}
-.nest-2 > .grid.-wrapped,
-.grid:not(.-wrapped) > .col > .grid.-wrapped,
-.nest-2 > table.-wrapped,
-.grid:not(.-wrapped) > .col > table.-wrapped,
-.nest-2.-deep .grid.-wrapped,
-.grid:not(.-wrapped) > .col.-deep .grid.-wrapped {
-  margin-right: 0;
-  margin-left: 0;
 }
 .nest-2 > .grid.-spaced,
 .grid:not(.-wrapped) > .col > .grid.-spaced,
-.nest-2 > table.-spaced,
-.grid:not(.-wrapped) > .col > table.-spaced,
-.nest-2.-deep .grid.-spaced,
-.grid:not(.-wrapped) > .col.-deep .grid.-spaced {
-  width: calc(5.511rem + 100%);
+.grid:not(.-wrapped) > .row > .col > .grid.-spaced {
   border-spacing: 1.837rem 0;
-  margin: 1.837rem -1.837rem 0 -3.674rem;
+  margin: 1.837rem -1.837rem 0 calc(-3.674rem - 1px);
 }
-.nest-2 > .grid.-hv,
-.grid:not(.-wrapped) > .col > .grid.-hv,
-.nest-2 > table.-hv,
-.grid:not(.-wrapped) > .col > table.-hv,
-.nest-2.-deep .grid.-hv,
-.grid:not(.-wrapped) > .col.-deep .grid.-hv {
+.nest-2 > .grid.-spaced:not(.-inline),
+.grid:not(.-wrapped) > .col > .grid.-spaced:not(.-inline),
+.grid:not(.-wrapped) > .row > .col > .grid.-spaced:not(.-inline) {
+  width: calc((5.511rem + 100%) + 1px);
+}
+.nest-2 > .grid.-spaced.-hv,
+.grid:not(.-wrapped) > .col > .grid.-spaced.-hv,
+.grid:not(.-wrapped) > .row > .col > .grid.-spaced.-hv {
   height: calc(3.674rem + 100%);
   border-spacing: 1.837rem;
-  margin: -1.837rem !important;
+  margin: -3.674rem -1.837rem -1.837rem calc(-3.674rem - 1px) !important;
 }
 .nest-2 > .grid.-wrapped,
 .grid:not(.-wrapped) > .col > .grid.-wrapped,
-.nest-2 > table.-wrapped,
-.grid:not(.-wrapped) > .col > table.-wrapped,
-.nest-2.-deep .grid.-wrapped,
-.grid:not(.-wrapped) > .col.-deep .grid.-wrapped {
+.grid:not(.-wrapped) > .row > .col > .grid.-wrapped {
   margin: 0.9185rem -0.9185rem -0.9185rem !important;
 }
 .nest-2 > .grid.-wrapped:first-child,
 .grid:not(.-wrapped) > .col > .grid.-wrapped:first-child,
-.nest-2 > table.-wrapped:first-child,
-.grid:not(.-wrapped) > .col > table.-wrapped:first-child,
-.nest-2.-deep .grid.-wrapped:first-child,
-.grid:not(.-wrapped) > .col.-deep .grid.-wrapped:first-child {
+.grid:not(.-wrapped) > .row > .col > .grid.-wrapped:first-child {
   margin-top: -0.9185rem !important;
 }
 .nest-2 > .grid.-wrapped > *,
 .grid:not(.-wrapped) > .col > .grid.-wrapped > *,
-.nest-2 > table.-wrapped > *,
-.grid:not(.-wrapped) > .col > table.-wrapped > *,
-.nest-2.-deep .grid.-wrapped > *,
-.grid:not(.-wrapped) > .col.-deep .grid.-wrapped > * {
+.grid:not(.-wrapped) > .row > .col > .grid.-wrapped > * {
   padding: 0.9185rem;
   margin: 0 !important;
 }
@@ -270,39 +246,25 @@ body {
 .nest-3.sub-all * {
   margin-top: 1.225rem;
 }
-.nest-3 > .grid.-wrapped,
-.nest-3 > table.-wrapped,
-.nest-3.-deep .grid.-wrapped {
-  margin-right: 0;
-  margin-left: 0;
-}
-.nest-3 > .grid.-spaced,
-.nest-3 > table.-spaced,
-.nest-3.-deep .grid.-spaced {
-  width: calc(3.675rem + 100%);
+.nest-3 > .grid.-spaced {
   border-spacing: 1.225rem 0;
-  margin: 1.225rem -1.225rem 0 -2.45rem;
+  margin: 1.225rem -1.225rem 0 calc(-2.45rem - 1px);
 }
-.nest-3 > .grid.-hv,
-.nest-3 > table.-hv,
-.nest-3.-deep .grid.-hv {
+.nest-3 > .grid.-spaced:not(.-inline) {
+  width: calc((3.675rem + 100%) + 1px);
+}
+.nest-3 > .grid.-spaced.-hv {
   height: calc(2.45rem + 100%);
   border-spacing: 1.225rem;
-  margin: -1.225rem !important;
+  margin: -2.45rem -1.225rem -1.225rem calc(-2.45rem - 1px) !important;
 }
-.nest-3 > .grid.-wrapped,
-.nest-3 > table.-wrapped,
-.nest-3.-deep .grid.-wrapped {
+.nest-3 > .grid.-wrapped {
   margin: 0.6125rem -0.6125rem -0.6125rem !important;
 }
-.nest-3 > .grid.-wrapped:first-child,
-.nest-3 > table.-wrapped:first-child,
-.nest-3.-deep .grid.-wrapped:first-child {
+.nest-3 > .grid.-wrapped:first-child {
   margin-top: -0.6125rem !important;
 }
-.nest-3 > .grid.-wrapped > *,
-.nest-3 > table.-wrapped > *,
-.nest-3.-deep .grid.-wrapped > * {
+.nest-3 > .grid.-wrapped > * {
   padding: 0.6125rem;
   margin: 0 !important;
 }
@@ -336,39 +298,25 @@ body {
 .nest-4.sub-all * {
   margin-top: 0.816rem;
 }
-.nest-4 > .grid.-wrapped,
-.nest-4 > table.-wrapped,
-.nest-4.-deep .grid.-wrapped {
-  margin-right: 0;
-  margin-left: 0;
-}
-.nest-4 > .grid.-spaced,
-.nest-4 > table.-spaced,
-.nest-4.-deep .grid.-spaced {
-  width: calc(2.448rem + 100%);
+.nest-4 > .grid.-spaced {
   border-spacing: 0.816rem 0;
-  margin: 0.816rem -0.816rem 0 -1.632rem;
+  margin: 0.816rem -0.816rem 0 calc(-1.632rem - 1px);
 }
-.nest-4 > .grid.-hv,
-.nest-4 > table.-hv,
-.nest-4.-deep .grid.-hv {
+.nest-4 > .grid.-spaced:not(.-inline) {
+  width: calc((2.448rem + 100%) + 1px);
+}
+.nest-4 > .grid.-spaced.-hv {
   height: calc(1.632rem + 100%);
   border-spacing: 0.816rem;
-  margin: -0.816rem !important;
+  margin: -1.632rem -0.816rem -0.816rem calc(-1.632rem - 1px) !important;
 }
-.nest-4 > .grid.-wrapped,
-.nest-4 > table.-wrapped,
-.nest-4.-deep .grid.-wrapped {
+.nest-4 > .grid.-wrapped {
   margin: 0.408rem -0.408rem -0.408rem !important;
 }
-.nest-4 > .grid.-wrapped:first-child,
-.nest-4 > table.-wrapped:first-child,
-.nest-4.-deep .grid.-wrapped:first-child {
+.nest-4 > .grid.-wrapped:first-child {
   margin-top: -0.408rem !important;
 }
-.nest-4 > .grid.-wrapped > *,
-.nest-4 > table.-wrapped > *,
-.nest-4.-deep .grid.-wrapped > * {
+.nest-4 > .grid.-wrapped > * {
   padding: 0.408rem;
   margin: 0 !important;
 }
@@ -402,39 +350,25 @@ body {
 .nest-5.sub-all * {
   margin-top: 0.544rem;
 }
-.nest-5 > .grid.-wrapped,
-.nest-5 > table.-wrapped,
-.nest-5.-deep .grid.-wrapped {
-  margin-right: 0;
-  margin-left: 0;
-}
-.nest-5 > .grid.-spaced,
-.nest-5 > table.-spaced,
-.nest-5.-deep .grid.-spaced {
-  width: calc(1.632rem + 100%);
+.nest-5 > .grid.-spaced {
   border-spacing: 0.544rem 0;
-  margin: 0.544rem -0.544rem 0 -1.088rem;
+  margin: 0.544rem -0.544rem 0 calc(-1.088rem - 1px);
 }
-.nest-5 > .grid.-hv,
-.nest-5 > table.-hv,
-.nest-5.-deep .grid.-hv {
+.nest-5 > .grid.-spaced:not(.-inline) {
+  width: calc((1.632rem + 100%) + 1px);
+}
+.nest-5 > .grid.-spaced.-hv {
   height: calc(1.088rem + 100%);
   border-spacing: 0.544rem;
-  margin: -0.544rem !important;
+  margin: -1.088rem -0.544rem -0.544rem calc(-1.088rem - 1px) !important;
 }
-.nest-5 > .grid.-wrapped,
-.nest-5 > table.-wrapped,
-.nest-5.-deep .grid.-wrapped {
+.nest-5 > .grid.-wrapped {
   margin: 0.272rem -0.272rem -0.272rem !important;
 }
-.nest-5 > .grid.-wrapped:first-child,
-.nest-5 > table.-wrapped:first-child,
-.nest-5.-deep .grid.-wrapped:first-child {
+.nest-5 > .grid.-wrapped:first-child {
   margin-top: -0.272rem !important;
 }
-.nest-5 > .grid.-wrapped > *,
-.nest-5 > table.-wrapped > *,
-.nest-5.-deep .grid.-wrapped > * {
+.nest-5 > .grid.-wrapped > * {
   padding: 0.272rem;
   margin: 0 !important;
 }
@@ -468,39 +402,25 @@ body {
 .nest-6.sub-all * {
   margin-top: 0.363rem;
 }
-.nest-6 > .grid.-wrapped,
-.nest-6 > table.-wrapped,
-.nest-6.-deep .grid.-wrapped {
-  margin-right: 0;
-  margin-left: 0;
-}
-.nest-6 > .grid.-spaced,
-.nest-6 > table.-spaced,
-.nest-6.-deep .grid.-spaced {
-  width: calc(1.089rem + 100%);
+.nest-6 > .grid.-spaced {
   border-spacing: 0.363rem 0;
-  margin: 0.363rem -0.363rem 0 -0.726rem;
+  margin: 0.363rem -0.363rem 0 calc(-0.726rem - 1px);
 }
-.nest-6 > .grid.-hv,
-.nest-6 > table.-hv,
-.nest-6.-deep .grid.-hv {
+.nest-6 > .grid.-spaced:not(.-inline) {
+  width: calc((1.089rem + 100%) + 1px);
+}
+.nest-6 > .grid.-spaced.-hv {
   height: calc(0.726rem + 100%);
   border-spacing: 0.363rem;
-  margin: -0.363rem !important;
+  margin: -0.726rem -0.363rem -0.363rem calc(-0.726rem - 1px) !important;
 }
-.nest-6 > .grid.-wrapped,
-.nest-6 > table.-wrapped,
-.nest-6.-deep .grid.-wrapped {
+.nest-6 > .grid.-wrapped {
   margin: 0.1815rem -0.1815rem -0.1815rem !important;
 }
-.nest-6 > .grid.-wrapped:first-child,
-.nest-6 > table.-wrapped:first-child,
-.nest-6.-deep .grid.-wrapped:first-child {
+.nest-6 > .grid.-wrapped:first-child {
   margin-top: -0.1815rem !important;
 }
-.nest-6 > .grid.-wrapped > *,
-.nest-6 > table.-wrapped > *,
-.nest-6.-deep .grid.-wrapped > * {
+.nest-6 > .grid.-wrapped > * {
   padding: 0.1815rem;
   margin: 0 !important;
 }
@@ -508,7 +428,8 @@ html,
 body {
   height: 100%;
 }
-.grid:not(.-wrapped) > .col {
+.grid:not(.-wrapped) > .col,
+.grid:not(.-wrapped) > .row > .col {
   background: rgba(0,0,0,0.15);
 }
 .-wrapped > .col {
